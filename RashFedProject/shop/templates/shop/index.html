@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}} - RashFed</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'normalize.css'%}">
+        <link rel="stylesheet" href="{% static 'style.css'%}">
+        <base target="_blank">
+    </head>
+    <body>
+        <header class = "header-wrapper">
+                <div class="header-logo">
+                    <div class="header-text">
+                        <h1>Онлайн-магазин RashFed</h1>
+                        <h3>Cочно! Быстро! Дёшево!</h3>
+                    </div>
+                </div>
+
+                <nav class="header-menu">
+                </nav>
+        </header>
+        <main>
+            <div class="home-page-wrapper">
+                <div class="home-page-menu">
+                    {% for category in categories %}
+                        <div class="menu-root">
+                            <div class = "menu-info">
+                                <a href="#">{{ category.name }}</a>
+                                <div class = "menu-subinfo">
+                                    <a href="#">{{ category.subcategory }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="home-page-center">
+                    {% for product in products %}
+                        <div class="product-block">
+                            <div class="product-block-image">
+                                
+                            </div>
+                            <div class="product-block-name">
+                                {{ product.name }}
+                                <div class="product-block-cost">
+                                    {{ product.price }} ₽
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

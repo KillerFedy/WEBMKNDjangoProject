@@ -1,5 +1,8 @@
+from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Products, Categories
 def index(request):
-    return HttpResponse("<h1>RashFed Shop</h1>")
+    products = Products.objects.all()
+    categories = Categories.objects.all()
+    return render(request, 'shop/index.html', {'products':products, 'categories':categories})
 
