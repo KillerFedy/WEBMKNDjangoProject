@@ -4,7 +4,7 @@ from .models import Products
 from .models import Categories
 
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'category', 'subcategory', 'price')
+    list_display = ('id', 'name', 'category', 'price')
     list_display_links = ('id', 'name')
     search_fields = ('id', 'name')
 

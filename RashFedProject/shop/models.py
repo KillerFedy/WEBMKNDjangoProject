@@ -4,10 +4,9 @@ from django.db import models
 
 class Products(models.Model):
     name = models.CharField(max_length=50, verbose_name='Продукт')
-    category = models.CharField(max_length=50, verbose_name='Категория')
-    subcategory = models.CharField(max_length=50, verbose_name='Подкатегория')
+    category = models.ForeignKey("Categories", models.PROTECT, null=True, verbose_name='Категория')
     price = models.PositiveSmallIntegerField(verbose_name="Цена")
-    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото")
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото", blank=True)
 
     def __str__(self):
         return self.name
@@ -20,7 +19,7 @@ class Products(models.Model):
 class Categories(models.Model):
     name = models.CharField(max_length=50, verbose_name="Категория")
     subcategory = models.CharField(max_length=50, verbose_name="Подкатегория")
-    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото")
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name="Фото", blank=True)
 
     def __str__(self):
         return self.name
