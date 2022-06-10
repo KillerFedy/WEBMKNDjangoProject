@@ -7,3 +7,8 @@ def index(request):
     categories = Categories.objects.all()
     return render(request, 'shop/index.html', {'products':products, 'categories':categories})
 
+def get_product(request, category_id):
+    products = Products.objects.filter(category_id=category_id)
+    categories = Categories.objects.all()
+    return render(request, 'shop/index.html', {'products':products, 'categories':categories})
+
