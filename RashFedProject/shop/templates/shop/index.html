@@ -19,7 +19,19 @@
                 </div>
 
                 <nav class="header-menu">
-                    <a href="#"><img src="../../../media/photos/2022/06/12/shop-basket.png" alt="Shop Basket"></a>
+                    <div class="cart">
+                        {% with total_items=cart|length %}
+                        {% if cart|length > 0%}
+                        В корзине:
+                        <a href="{%url 'cart:cart_detail' %}">
+                            {{total_items}} шт, ₽{{cart.get_total_price}}
+                        </a>
+                        {% else %}
+                        Корзина пустая
+                        {% endif %}
+                        {% endwith %}
+                        <a href="/cart"><img src="../../../media/photos/2022/06/12/shop-basket.png" alt="Shop Basket"></a>  
+                    </div>
                     <a href="/registration"><img src="../../../media/photos/2022/06/12/user-profile.png" alt="Profile"></a>
                 </nav>
         </header>
@@ -52,6 +64,11 @@
                                 <div class="product-block-cost">
                                     {{ product.price }} ₽
                                 </div>
+                                <form action="{% url 'cart:cart_add' product.id %}" method="post" >
+                                    {{ cart_product_form }}
+                                    {% csrf_token %}
+                                    <input type="submit" class="buybtn" value = "Добавить в корзину">
+                                </form>
                             </div>
                         </div>
                     {% endfor %}

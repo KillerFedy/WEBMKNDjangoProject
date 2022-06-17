@@ -13,6 +13,7 @@ html {
 }
 
 .header-wrapper {
+    z-index: 10;
     position: sticky;
     top:0;
     background-color: #cc5658;
@@ -122,7 +123,7 @@ html {
     border-radius: 10%;
     margin-top: 2.5rem;
     margin-left: 5rem;
-    height: 25rem;
+    height: 30rem;
     width: 30rem;
 }
 
@@ -140,7 +141,7 @@ html {
     color: #4e4a4a;
     font-size: 1.5rem;
     font-family: "Noto Sans", sans-serif;
-    margin-top: .5rem;
+    margin-top: 1rem;
 }
 
 .product-block-cost{
@@ -155,4 +156,19 @@ html {
     position:absolute;
 	bottom:0;
     right: 0;
+}
+
+.buybtn {
+    background-color: #f8665c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    width: 75%;
+    padding: 1rem 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.buybtn:hover{
+    opacity:1;
 }
