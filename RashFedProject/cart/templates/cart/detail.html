@@ -7,9 +7,11 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Корзина покупок</h1>
+  <header>
+    <h1>Корзина покупок</h1>
+  </header>
   <table class="cart">
-    <thead>
+    <thead class="row-title">
       <tr>
         <th>Картинка</th>
         <th>Товар</th>
@@ -20,7 +22,7 @@
         <th>Общая стоимость</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="row-body">
       {% for item in cart %}
         {% with product=item.product %}
           <tr>
@@ -52,7 +54,7 @@
       </tr>
     </tbody>
   </table>
-  <p class="text-right">
+  <p class="text-center">
     <a href="/" class="button light">В магазин</a>
     <a href="#" class="button">Оформить заказ</a>
   </p>

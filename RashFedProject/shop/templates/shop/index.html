@@ -22,23 +22,26 @@
                     <div class="cart">
                         {% with total_items=cart|length %}
                         {% if cart|length > 0%}
+                        <h3>
                         В корзине:
                         <a href="{%url 'cart:cart_detail' %}">
                             {{total_items}} шт, ₽{{cart.get_total_price}}
                         </a>
+                        </h3>
                         {% else %}
-                        Корзина пустая
+                        <h3>Корзина пустая</h3>
                         {% endif %}
                         {% endwith %}
-                        <a href="/cart"><img src="../../../media/photos/2022/06/12/shop-basket.png" alt="Shop Basket"></a>  
                     </div>
-                    {% if user.is_authenticated %}
-                        <h1>Hello, {{ user.username|default:'Guest' }}</h1>
-                        <a href="{% url 'logout' %}">Logout</a>
-              
-                    {% else %}
-                        <a href="/registration"><img src="../../../media/photos/2022/06/12/user-profile.png" alt="Profile"></a>
-                    {% endif %}
+                    <div class="user-profile">
+                        {% if user.is_authenticated %}
+                            <h1>Привет, я {{ user.username|default:'Guest' }}</h1>
+                            <h3><a href="{% url 'logout' %}">Выйти из профиля</a></h3>
+                    
+                        {% else %}
+                            <a href="/registration"><img src="../../../media/photos/2022/06/12/user-profile.png" alt="Profile"></a>
+                        {% endif %}
+                    </div>
                 </nav>
         </header>
         <main>

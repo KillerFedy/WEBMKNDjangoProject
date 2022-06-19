@@ -1,13 +1,22 @@
+{% load static %}
+{% block title %}
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="{% static 'normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'style1.css'%}">
+{% endblock %}
+
 
 {% block content %}
-<h2>Register</h2>
+<h2>Регистрация</h2>
 
 <form method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Register">
+    <br><input type="submit" value="Зарегистрироваться">
 </form>
 
-<a href="{% url 'login' %}">Back to login</a>
-<a href="{% url 'home' %}">Back to Home</a>
+<div class="nav-menu">
+  <a href="{% url 'login' %}">Авторизация</a>
+  <a href="{% url 'home' %}">В Магазин</a>
+</div>
 {% endblock %}

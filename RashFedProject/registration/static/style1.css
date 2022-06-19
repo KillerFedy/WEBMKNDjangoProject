@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&family=Rubik:wght@500&display=swap');
 
-.container {
-  padding: 16px;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 0.7rem;
-}
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -35,30 +30,19 @@ hr {
   margin-bottom: 25px;
 }
 
-.registerbtn {
-  font-family: "Fredoka", sans-serif;
-  font-size: 1rem;
-  background-color: #f8665c;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+input[type=submit]{
+  margin-top: 0.5rem;
 }
 
-.registerbtn:hover {
-  opacity:1;
-}
-
-a {
-  color: dodgerblue;
-}
-
-.signin {
-  background-color: #f1f1f1;
+.nav-menu {
   text-align: center;
-  font-family: "Noto Sans", sans-serif;
-  font-size: 0.8rem;
+}
+
+.nav-menu a {
+  padding: 0.5rem;
+  border-radius: 5%;
+  border: 0.2rem solid rgb(51, 49, 49);
+  margin-right: 1.5rem;
+  color: rgb(9, 20, 31);
+  text-decoration: none;
 }

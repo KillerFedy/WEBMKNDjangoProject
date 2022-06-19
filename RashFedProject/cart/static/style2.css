@@ -1,5 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&family=Rubik:wght@500&display=swap');
+
+html{
+    background-color: #cdc8c8;
+}
+
+header {
+    background-color: #f8665c;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cart { 
+    margin-top: 1.2rem;
+    background-color: #9f9f9f;
+    width: 100%;
+}
+
+.row-title {    
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+.row-body{
+    font-family: "Arial", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.row-body a {
+    text-decoration: none;
+    color: #f5f0f0;
+}
+
 .menu-root img {
     margin-right: 1rem;
     height: 5rem;
     width: 5rem;
+}
+
+.total {
+    height: 4.5rem;
+}
+
+.text-center{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.text-center a{
+    padding: 0.5rem;
+    margin-right: 1.5rem;
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: #9f9f9f solid 0.2rem;
+    border-radius: 5%;
+    text-decoration: underline dotted #f5f0f0 0.2rem;
 }
