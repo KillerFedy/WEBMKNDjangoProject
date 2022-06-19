@@ -32,7 +32,13 @@
                         {% endwith %}
                         <a href="/cart"><img src="../../../media/photos/2022/06/12/shop-basket.png" alt="Shop Basket"></a>  
                     </div>
-                    <a href="/registration"><img src="../../../media/photos/2022/06/12/user-profile.png" alt="Profile"></a>
+                    {% if user.is_authenticated %}
+                        <h1>Hello, {{ user.username|default:'Guest' }}</h1>
+                        <a href="{% url 'logout' %}">Logout</a>
+              
+                    {% else %}
+                        <a href="/registration"><img src="../../../media/photos/2022/06/12/user-profile.png" alt="Profile"></a>
+                    {% endif %}
                 </nav>
         </header>
         <main>
